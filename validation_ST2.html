@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Report | Student 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Validation Page Specific Styles */
+        .validation-page {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .validation-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+        
+        .validation-main {
+            flex: 3;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .validation-aside {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            align-self: flex-start;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .validation-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .validation-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .validation-img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .top-level-ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .top-level-ul > li {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .top-level-ul ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        
+        .top-level-ul a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .top-level-ul a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .top {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .top a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .top a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .validation-container {
+                flex-direction: column;
+            }
+            
+            .validation-aside {
+                position: static;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="wrapper header-content">
+            <div class="logo-section">
+                <img src="E_PRINT_12.jpg" alt="Website Logo" class="logo">
+                <div>
+                    <h1 class="site-title">Validation Report</h1>
+                    <p class="site-subtitle">Student 2 - Rivithi Mahendra</p>
+                   
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="Table.html">Impact Data</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="team.html">Team</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <main class="validation-page">
+        <div class="validation-container">
+            <aside class="validation-aside">
+                <h3>Core pages developed:</h3>
+                <ul class="top-level-ul">
+                    <li>Student 2</li>
+                     <ul>
+                        <li><a href="#homeVal">Home page</a></li>
+                        <li><a href="#tableVal">Table page</a></li>
+                        <li><a href="#contentVal">Content page</a></li>
+                    </ul>
+                    <li>Other Team Members</li>
+                    <ul>
+                        <li><a href="pageEditor_ST1.html">Student 1's pages</a>
+                            <ul>
+                                <li>Splash Page</li>
+                                <li>Volunteer Page</li>
+                                <li>Content Page</li>
+                            </ul>
+                        </li>
+                        <li><a href="pageEditor_ST3.html">Student 3's pages</a>
+                            <ul>
+                                <li>Feedback Page</li>
+                                <li>Team Page</li>
+                                <li>Content Page</li>
+                            </ul>
+                        </li>
+                        <li><a href="pageEditor_ST4.html">Student 4's pages</a>
+                            <ul>
+                                <li>Profile Page</li>
+                                <li>Sitemap Page</li>
+                                <li>Content Page</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </aside>
+
+            <div class="validation-main">
+                <section class="validation-section" id="homeVal">
+                    <h2>Home Page Validation Report</h2>
+                    <p>The home page validation was completed successfully with no errors. All HTML elements were properly nested and closed, and the CSS styling passed validation checks. The navigation bar and template structure were implemented according to the requirements.</p>
+                    <img src="validation_home.png" alt="Home Page Validation" class="validation-img">
+                    
+                    <h3>Key Validation Points:</h3>
+                    <ul>
+                        <li>Successfully validated HTML5 structure</li>
+                        <li>No CSS errors in the global stylesheet</li>
+                        <li>Proper use of semantic HTML elements</li>
+                        <li>Accessibility requirements met (alt text for images, proper heading hierarchy)</li>
+                    </ul>
+                    
+                    <h3>Back to Page Editor</h3>
+                    <p><a href="pageEditor_ST2.html#home">Return to  Page Editor</a></p>
+                </section>
+
+                <section class="validation-section" id="tableVal">
+                    <h2>Table Page Validation Report</h2>
+                    <p>The table page validation showed no errors. The complex table structure with merged cells, hover effects, and embedded links was implemented correctly. All CSS for table styling passed validation.</p>
+                    <img src="validation_table.png" alt="Table Page Validation" class="validation-img">
+                    
+                    <h3>Key Validation Points:</h3>
+                    <ul>
+                        <li>Proper use of rowspan and colspan attributes</li>
+                        <li>Valid CSS for zebra striping and hover effects</li>
+                        <li>Correct implementation of tooltips for accessibility</li>
+                        <li>No deprecated HTML attributes used</li>
+                    </ul>
+                    
+                    <h3>Back to Page Editor</h3>
+                    <p><a href="pageEditor_ST2.html#table">Return Page Editor</a></p>
+                </section>
+
+                <section class="validation-section" id="contentVal">
+                    <h2>Content Page Validation Report</h2>
+                    <p>The content page validation was successful with no errors or warnings. The internal navigation system and "Go to Top" button were implemented using valid HTML and CSS techniques.</p>
+                    <img src="validation_content.png" alt="Content Page Validation" class="validation-img">
+                    
+                    <h3>Key Validation Points:</h3>
+                    <ul>
+                        <li>Proper heading hierarchy (h1-h6)</li>
+                        <li>Valid internal linking with anchor tags</li>
+                        <li>Correct implementation of the fixed-position "Go to Top" button</li>
+                        <li>All images include proper alt text</li>
+                    </ul>
+                    
+                    <h3>Back to Page Editor</h3>
+                    <p><a href="pageEditor_ST2.html#content">Return to Page Editor</a></p>
+                </section>
+
+                <p class="top"><a href="#top">Back to top</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer>
+   
+    <div class="footer-container">
+        <!--Logo and Social Icons -->
+        <div class="footer-left">
+            <img src="sdgs_black.png" alt="Footer Logo" class="footer-logo">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/SustDev" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SustDev" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.flickr.com/photos/sustdev/" class="flickr"><i class="fab fa-flickr"></i></a>
+                <a href="https://www.youtube.com/user/uncsd2012/featured" class="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+       
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Website Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Impact Data</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="https://www.globalgoals.org/terms-conditions/">Terms & Conditions</a></li>
+                    <li><a href="https://www.globalgoals.org/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="https://www.globalgoals.org/cookies/">Cookies</a></li>
+                    <li><a href="https://www.globalgoals.org/anti-corruption/">Anti Corruption</a></li>
+                    <li><a href="https://www.globalgoals.org/asset-licence/">Asset License</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Content Pages</h4>
+                <ul>
+                    <li><a href="content_ST1.html">Content 01</a></li>
+                    <li><a href="content_ST2.html">Content 02</a></li>
+                    <li><a href="content_ST3.html">Content 03</a></li>
+                    <li><a href="content_ST4.html">Content 04</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Editor Pages</h4>
+                <ul>
+                    <li><a href="pageEditor_ST1.html">Page Editor ST1</a></li>
+                    <li><a href="pageEditor_ST2.html">Page Editor ST2</a></li>
+                    <li><a href="pageEditor_ST3.html">Page Editor ST3</a></li>
+                    <li><a href="pageEditor_ST4.html">Page Editor ST4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Copyright Section -->
+    <div class="footer-2">
+        <div class="copyright">
+            <p>&copy; Copyright <strong>United Nations.</strong> All rights Reserved.<br>
+            <strong>Design By G8 - Group9</strong> 
+        </div>    
+    </div>
+</footer>

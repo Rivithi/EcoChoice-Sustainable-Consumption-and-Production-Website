@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Data - Responsible Consumption & Production</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ 
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Simple color variables */
+        :root {
+            --primary-color: #2d5a27;
+            --secondary-color: #4a7c59;
+            --accent-color: #7fb069;
+            --white: #ffffff;
+        }
+
+        /* Container for content */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Main content */
+        main {
+            min-height: 500px;
+            padding: 20px 0;
+            background-color: white;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Page-specific styles for table - SQUARE DESIGN */
+        .table-container {
+            background: var(--white);
+            border-radius: 0; /* Removed border-radius for square design */
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 0; /* Removed border-radius for square design */
+        }
+
+        .page-header h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 0; /* Removed border-radius for square design */
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .data-table th img {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            border-radius: 0; /* Removed border-radius for square design */
+        }
+
+        .data-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+            transition: background-color 0.3s ease;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .data-table tr:nth-child(odd) {
+            background-color: var(--white);
+        }
+
+        .data-table tr:hover {
+            background-color: rgba(127,176,105,0.1);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        .logo-cell {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--white);
+            font-weight: bold;
+            border-radius: 0; 
+        }
+
+        .logo-cell img {
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 0; 
+        }
+
+        .status-icon {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .status-excellent { color: #28a745; }
+        .status-good { color: #17a2b8; }
+        .status-fair { color: #ffc107; }
+        .status-poor { color: #dc3545; }
+
+        .impact-score {
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 0; 
+            color: white;
+        }
+
+        .score-high { background-color: #28a745; }
+        .score-medium { background-color: #ffc107; color: #333; }
+        .score-low { background-color: #dc3545; }
+
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .tooltip:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0; 
+            white-space: nowrap;
+            z-index: 1000;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .tooltip:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--primary-color);
+            z-index: 1000;
+        }
+
+        .clickable-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .clickable-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .merged-cell {
+            background: linear-gradient(45deg, var(--accent-color), rgba(127,176,105,0.3));
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .back-navigation {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 0; 
+        }
+
+        /* Responsive design for table */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .table-container {
+                padding: 1rem;
+            }
+            
+            .data-table {
+                font-size: 0.8rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem;
+            }
+            
+            .data-table th img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrapper {
+                padding: 0 15px;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .nav-list a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="wrapper">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="E_PRINT_12.jpg" alt="EcoChoice Logo" class="logo">
+                    <div>
+                        <h1 class="site-title">EcoChoice</h1>
+                        <p class="site-subtitle">Responsible Consumption & Production</p>
+                    </div>
+                </div>
+                <!--Navigation-->
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="Table.html" class="active">Impact Data</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="team.html">Team</a></li>
+                       
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Global Impact Data</h1>
+                <p>Tracking our progress towards responsible consumption and production</p>
+            </div>
+
+            <!-- Impact Data Table -->
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Organization</th>
+                            <th>Region</th>
+                            <th>Waste Reduced (Tons)</th>
+                            <th>CO₂ Saved (Tons)</th>
+                            <th>People Reached</th>
+                            <th>Impact Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td class="logo-cell">
+                           <img src="Eco_choice.jpg" alt="EcoChoice">
+                           <div>EcoChoice</div>
+                           </td>
+
+                            <td>North America</td>
+                            <td>45,230</td>
+                            <td>128,500</td>
+                            <td>500,000</td>
+                            <td><span class="impact-score score-high">95</span></td>
+                            <td><span class="status-icon status-excellent">✓ Excellent</span></td>
+                        </tr>
+                        <tr>
+
+
+                            <td class="logo-cell">
+                          <img src="Green_partners.jpg" alt="Green Partners">
+                           <div>Green Partners</div>
+                           </td>
+
+                            <td>Europe</td>
+                            <td>32,450</td>
+                            <td>89,200</td>
+                            <td>350,000</td>
+                            <td><span class="impact-score score-high">88</span></td>
+                            <td><span class="status-icon status-good">✓ Good</span></td>
+                        </tr>
+                        <tr>
+
+
+                            <td class="logo-cell">
+                           <img src="Sustainable_asia.png" alt="Sustainable Asia">
+                           <div>Sustainable Asia</div>
+                           </td>
+                          
+                            <td>Asia Pacific</td>
+                            <td>67,890</td>
+                            <td>156,300</td>
+                            <td>800,000</td>
+                            <td><span class="impact-score score-high">92</span></td>
+                            <td><span class="status-icon status-excellent">✓ Excellent</span></td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td class="logo-cell">
+                           <img src="Africa_Green.webp" alt="Africa Green">
+                           <div>Africa Green</div>
+                           </td>
+                                
+                         
+                            <td>Africa</td>
+                            <td>23,560</td>
+                            <td>64,800</td>
+                            <td>280,000</td>
+                            <td><span class="impact-score score-medium">72</span></td>
+                            <td><span class="status-icon status-fair">⚠ Fair</span></td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td class="logo-cell">
+                           <img src="Latin_America.png" alt="Latin America">
+                           <div>Latin America</div>
+                           </td>
+                                                            
+                         
+                            <td>South America</td>
+                            <td>18,750</td>
+                            <td>45,200</td>
+                            <td>220,000</td>
+                            <td><span class="impact-score score-low">65</span></td>
+                            <td><span class="status-icon status-poor">⚠ Needs Improvement</span></td>
+                        </tr>
+
+
+                        <tr class="merged-cell">
+                            <td colspan="2"><strong>Global Totals</strong></td>
+                            <td><strong>187,880</strong></td>
+                            <td><strong>484,000</strong></td>
+                            <td><strong>2,150,000</strong></td>
+                            <td><span class="impact-score score-high">85</span></td>
+                            <td><span class="status-icon status-good">✓ On Track</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="back-navigation">
+                <a href="home.html" class="btn"> Home</a>
+                
+            </div>
+        </div>
+    </main>
+
+    <!--footer-->
+   <footer>
+    <div class="footer-container">
+        <!-- Left Side: Logo and Social Icons -->
+        <div class="footer-left">
+            <img src="sdgs_black.png" alt="Footer Logo" class="footer-logo">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/SustDev" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SustDev" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.flickr.com/photos/sustdev/" class="flickr"><i class="fab fa-flickr"></i></a>
+                <a href="https://www.youtube.com/user/uncsd2012/featured" class="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+       
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Website Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Impact Data</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="https://www.globalgoals.org/terms-conditions/">Terms & Conditions</a></li>
+                    <li><a href="https://www.globalgoals.org/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="https://www.globalgoals.org/cookies/">Cookies</a></li>
+                    <li><a href="https://www.globalgoals.org/anti-corruption/">Anti Corruption</a></li>
+                    <li><a href="https://www.globalgoals.org/asset-licence/">Asset License</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Content Pages</h4>
+                <ul>
+                    <li><a href="content_ST1.html">Content 01</a></li>
+                    <li><a href="content_ST2.html">Content 02</a></li>
+                    <li><a href="content_ST3.html">Content 03</a></li>
+                    <li><a href="content_ST4.html">Content 04</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Editor Pages</h4>
+                <ul>
+                    <li><a href="pageEditor_ST1.html">Page Editor ST1</a></li>
+                    <li><a href="pageEditor_ST2.html">Page Editor ST2</a></li>
+                    <li><a href="pageEditor_ST3.html">Page Editor ST3</a></li>
+                    <li><a href="pageEditor_ST4.html">Page Editor ST4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Copyright Section -->
+    <div class="footer-2">
+        <div class="copyright">
+            <p>&copy; Copyright <strong>United Nations.</strong> All rights Reserved.<br>
+            <strong>Design By G8 - Group9</strong> 
+        </div>    
+    </div>
+</footer>

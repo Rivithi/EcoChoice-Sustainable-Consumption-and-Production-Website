@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor | Student 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Page Editor Specific Styles */
+        .page-editor {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .editor-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+        
+        .editor-main {
+            flex: 3;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .editor-aside {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .editor-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .editor-section h2 {
+            color: #2d5a27;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #7fb069;
+        }
+        
+        .editor-section h3 {
+            color: #4a7c59;
+            margin: 20px 0 10px;
+        }
+        
+        .top-level-ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .top-level-ul > li {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2d5a27;
+        }
+        
+        .top-level-ul ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+            font-weight: normal;
+            color: #333;
+        }
+        
+        .top-level-ul a {
+            color: #4a7c59;
+            text-decoration: none;
+        }
+        
+        .top-level-ul a:hover {
+            color: #2d5a27;
+            text-decoration: underline;
+        }
+        
+        .ref {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .ref li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+        
+        .top {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .top a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7fb069;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .top a:hover {
+            background-color: #6a9c54;
+        }
+        
+        @media (max-width: 768px) {
+            .editor-container {
+                flex-direction: column;
+            }
+        }
+
+        /* Header styles matching homepage */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px; /* Smaller logo size */
+            height: auto;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="E_PRINT_12.jpg" alt="Logo" class="logo">
+                    <div>
+                         <h1 class="site-title">Page Editor</h1>
+                         <p class="site-subtitle">Student 2 - Rivithi Mahendra</p>
+
+                        
+                        
+                    </div>
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="table.html">Impact Data</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-editor">
+        <div class="editor-container">
+            <aside class="editor-aside">
+                <h3>Core pages developed:</h3>
+                <ul class="top-level-ul">
+                    <li>Student 2</li>
+                    <ul> 
+                        <li><a href="#home">Home page validation</a></li>
+                        <li><a href="#table">Table page validation</a></li>
+                        <li><a href="#content">Content page validation</a></li>
+                    </ul>
+                    <li>Other Team Members</li>
+                    <ul>
+                        <li><a href="pageEditor_ST1.html">Student 1's pages</a>
+                            <ul>
+                                <li>Splash Page</li>
+                                <li>Volunteer Page</li>
+                                <li>Content Page</li>
+                            </ul>
+                        </li>
+                        <li><a href="pageEditor_ST3.html">Student 3's pages</a>
+                            <ul>
+                                <li>Feedback Page</li>
+                                <li>Team Page</li>
+                                <li>Content Page</li>
+                            </ul>
+                        </li>
+                        <li><a href="pageEditor_ST4.html">Student 4's pages</a>
+                            <ul>
+                                <li>Profile Page</li>
+                                <li>Sitemap Page</li>
+                                <li>Content Page</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </aside>
+
+            <div class="editor-main">
+                <!-- Home Page Section -->
+                <section class="editor-section" id="home">
+                    <h2>Home Page validation report</h2>
+                    
+                    <h3>Technical Description</h3>
+                    <p>The home page serves as the central hub of the website with the following features:</p>
+                    <ul>
+                        <li>Responsive grid layout for SDG goal cards using CSS Grid</li>
+                        <li>Interactive hover effects on navigation elements</li>
+                        <li>Consistent header and footer structure across all pages</li>
+                        <li>Global CSS styling for unified design</li>
+                        <li>Hero section with gradient background</li>
+                        <li>Content cards with hover animations</li>
+                    </ul>
+                    
+                    <h3>Key HTML/CSS Techniques</h3>
+                    <ul>
+                        <li>Used semantic HTML5 elements (header, nav, main, footer)</li>
+                        <li>Implemented CSS Grid for the goal card layout</li>
+                        <li>Created CSS variables for consistent theming</li>
+                        <li>Added media queries for responsive design</li>
+                        <li>Used flexbox for flexible component layouts</li>
+                    </ul>
+                    
+                    <h3>Accessibility</h3>
+                    <p>Accessibility features include:</p>
+                    <ul>
+                        <li>Proper heading hierarchy (h1-h6)</li>
+                        <li>Alt text for all images</li>
+                        <li>Keyboard-navigable interface</li>
+                        <li>Sufficient color contrast</li>
+                        <li>Responsive design for all screen sizes</li>
+                    </ul>
+                    
+                    <h3>Link to the validation page</h3>
+                    <p><a href="validation_ST2.html#homeVal">Validation report</a></p>
+
+                    <h3>Link to the page</h3>
+                    <p><a href="home.html">Go to home page</a></p>
+                </section>
+
+                <!-- Table Page Section -->
+                <section class="editor-section" id="table">
+                    <h2>Table Page validation report</h2>
+                    
+                    <h3>Technical Description</h3>
+                    <p>The table page features:</p>
+                    <ul>
+                        <li>Interactive data table with hover effects</li>
+                        <li>Responsive design for various screen sizes</li>
+                        <li>Color-coded rows for better readability</li>
+                        <li>Embedded links within table cells</li>
+                        <li>Tooltips for additional information</li>
+                    </ul>
+
+                    <h3>Key HTML/CSS Techniques</h3>
+                    <ul>
+                        <li>Used complex table structure with rowspan/colspan</li>
+                        <li>Implemented zebra striping with nth-child selectors</li>
+                        <li>Added tooltips with CSS pseudo-elements</li>
+                        <li>Styled with CSS transitions for interactive elements</li>
+                        <li>Created responsive table behavior with overflow</li>
+                    </ul>
+
+                    <h3>Accessibility</h3>
+                    <p>Accessibility considerations:</p>
+                    <ul>
+                        <li>Table captions and scope attributes</li>
+                        <li>ARIA labels for interactive elements</li>
+                        <li>Responsive table behavior</li>
+                        <li>Keyboard navigation support</li>
+                        <li>High contrast color scheme</li>
+                    </ul>
+
+                    <h3>Link to the validation page</h3>
+                    <p><a href="validation_ST2.html#tableVal">Validation report</a></p>
+                    
+                    <h3>Link to the page</h3>
+                    <p><a href="table.html">Go to table page</a></p>
+                </section>
+
+                <!-- Content Page Section -->
+                <section class="editor-section" id="content">
+                    <h2>Content Page validation report</h2>
+                    
+                    <h3>Technical Description</h3>
+                    <p>The content page includes:</p>
+                    <ul>
+                        <li>Detailed information about SDG 12 targets</li>
+                        <li>Image galleries with captions</li>
+                        <li>Internal navigation for long content</li>
+                        <li>"Back to top" floating button</li>
+                        <li>Responsive statistics grid</li>
+                    </ul>
+
+                    <h3>Key HTML/CSS Techniques</h3>
+                    <ul>
+                        <li>Implemented smooth scrolling for internal links</li>
+                        <li>Used CSS Flexbox for responsive layouts</li>
+                        <li>Created fixed position "back to top" button</li>
+                        <li>Styled image galleries with hover effects</li>
+                        <li>Added responsive statistics display</li>
+                    </ul>
+
+                    <h3>Accessibility</h3>
+                    <p>Accessibility features implemented:</p>
+                    <ul>
+                        <li>Proper semantic structure</li>
+                        <li>Skip navigation links</li>
+                        <li>Image alt descriptions</li>
+                        <li>Focus states for interactive elements</li>
+                        <li>Scalable text sizes</li>
+                    </ul>
+
+                    <h3>Link to the validation page</h3>
+                    <p><a href="validation_ST2.html#contentVal">Validation report</a></p>
+                    
+                    <h3>Link to the page</h3>
+                    <p><a href="content_ST2.html">Go to content page</a></p>
+                </section>
+
+                <!-- Challenges Section -->
+                <section class="editor-section">
+                    <h2>Challenges and Lessons Learned</h2>
+                    <p>Key challenges included:</p>
+                    <ul>
+                        <li>Creating a responsive table that works on mobile devices</li>
+                        <li>Ensuring consistent styling across all pages</li>
+                        <li>Implementing complex hover states without JavaScript</li>
+                        <li>Balancing design aesthetics with accessibility requirements</li>
+                    </ul>
+                    <p>Lessons learned:</p>
+                    <ul>
+                        <li>Importance of semantic HTML for accessibility</li>
+                        <li>Value of CSS variables for maintainable styling</li>
+                        <li>Need for thorough cross-browser testing</li>
+                        <li>Benefits of mobile-first design approach</li>
+                    </ul>
+                </section>
+
+                <!-- Compliance Section -->
+                <section class="editor-section">
+                    <h2>Compliance</h2>
+                    <p>The pages comply with web standards by:</p>
+                    <ul>
+                        <li>Using semantic HTML5 elements</li>
+                        <li>Following WCAG 2.1 accessibility guidelines</li>
+                        <li>Validating against W3C standards</li>
+                        <li>Implementing responsive design principles</li>
+                        <li>Adhering to the university's web publishing regulations</li>
+                    </ul>
+                </section>
+
+                <!-- References Section -->
+                <section class="editor-section">
+                    <h2>References</h2>
+                    <ul class="ref">
+                        <li>W3Schools (2025) <i>HTML Tables.</i> Available at: <a href="https://www.w3schools.com/html/html_tables.asp">https://www.w3schools.com/html/html_tables.asp</a> (Accessed: 15 June 2025).</li>
+                        <li>MDN Web Docs (2025) <i>CSS Grid Layout.</i> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout</a> (Accessed: 15 June 2025).</li>
+                        <li>United Nations (2025) <i>Sustainable Development Goals.</i> Available at: <a href="https://sdgs.un.org/goals">https://sdgs.un.org/goals</a> (Accessed: 15 June 2025).</li>
+                        <li>WebAIM (2025) <i>Web Accessibility in Mind.</i> Available at: <a href="https://webaim.org/">https://webaim.org/</a> (Accessed: 15 June 2025).</li>
+                    </ul>
+                </section>
+
+                <p class="top"><a href="#top">Back to top</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <footer>
+    <div class="footer-container">
+        <!--Logo and Social Icons -->
+        <div class="footer-left">
+            <img src="sdgs_black.png" alt="Footer Logo" class="footer-logo">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/SustDev" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SustDev" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.flickr.com/photos/sustdev/" class="flickr"><i class="fab fa-flickr"></i></a>
+                <a href="https://www.youtube.com/user/uncsd2012/featured" class="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Website Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="table.html">Impact Data</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="https://www.globalgoals.org/terms-conditions/">Terms & Conditions</a></li>
+                        <li><a href="https://www.globalgoals.org/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="https://www.globalgoals.org/cookies/">Cookies</a></li>
+                        <li><a href="https://www.globalgoals.org/anti-corruption/">Anti Corruption</a></li>
+                        <li><a href="https://www.globalgoals.org/asset-licence/">Asset License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Content Pages</h4>
+                    <ul>
+                        <li><a href="content_ST1.html">Content 01</a></li>
+                        <li><a href="content_ST2.html">Content 02</a></li>
+                        <li><a href="content_ST3.html">Content 03</a></li>
+                        <li><a href="content_ST4.html">Content 04</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Editor Pages</h4>
+                    <ul>
+                        <li><a href="pageEditor_ST1.html">Page Editor ST1</a></li>
+                        <li><a href="pageEditor_ST2.html" class="active">Page Editor ST2</a></li>
+                        <li><a href="pageEditor_ST3.html">Page Editor ST3</a></li>
+                        <li><a href="pageEditor_ST4.html">Page Editor ST4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Copyright Section -->
+        <div class="footer-2">
+            <div class="copyright">
+                <p>&copy; Copyright <strong>United Nations.</strong> All rights Reserved.<br>
+                <strong>Design By G8 - Group9</strong> 
+            </div>    
+        </div>
+    </footer>
+</body>
+</html>
